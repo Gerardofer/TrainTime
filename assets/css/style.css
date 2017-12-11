@@ -1,0 +1,24 @@
+#header {
+	height: 300px;
+	border-radius: 5px;
+	background-image: url("../images/jay-wennington-13853.jpg");
+	background-position: center;
+	background-size: cover;
+	/*background-attachment: fixed, scroll;*/
+	
+}
+
+.center-align {
+	padding-top: 2.5%;
+	color: #ffab91;
+	opacity: 1.00;
+	z-index: 1;
+}
+
+h4.center-align {
+	padding-top: 8.3%;
+}
+
+.input-field label {
+	color: black;
+}
