@@ -21,4 +21,9 @@ h4.center-align {
 
 .input-field label {
 	color: black;
+	font-size: 1.25rem;
+}
+
+th {
+	font-size: 1.5rem;
 }
