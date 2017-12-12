@@ -24,13 +24,21 @@ $('#data-submit').on('click', function(){
     time = $('#time').val().trim();
     frecuency = $('#frecuency').val().trim();
 
-    database.ref().push({
+    var newTrain = {
         train_name: train,
         destination: destination,
         schedule: time,
         frecuency: frecuency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
-    })
+    }
+
+    database.ref().push(newTrain);
+
+    $('#train-name').val("");
+    $('#destination').val("");
+    $('#time').val("");
+    $('#frecuency').val("");
+
 });
 
 database.ref().on('child_added', function(snapshot){
@@ -41,7 +49,15 @@ database.ref().on('child_added', function(snapshot){
     trainName.append('<tr><td>' + snapshot.val().train_name + '</td></tr>');
     desti.append('<tr><td>' + snapshot.val().destination + '</td></tr>');
     frec.append('<tr><td>' + snapshot.val().frecuency + ' min' + '</td></tr>');
+
+    var currentTime = moment().format('HH:mm');
+    $('#now-time').html('<h1>' + currentTime + '</h1>');
+
+    
+
 })
+
+
 
 
 
